@@ -1,3 +1,36 @@
+# version: '3'
+# services:
+#   my-app:
+#     build: .
+#     ports:
+#       - 3000:3000
+#     environment:
+#       - MONGO_DB_USERNAME=admin
+#       - MONGO_DB_PWD=superuser
+#   mongodb:
+#     image: mongo
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - mongo_data:/data/db
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME=admin
+#       - MONGO_INITDB_ROOT_PASSWORD=superuser
+#   mongo-express:
+#     image: mongo-express
+#     restart: always
+#     ports:
+#       - 8081:8081
+#     environment:
+#       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+#       - ME_CONFIG_MONGODB_ADMINPASSWORD=superuser
+#       - ME_CONFIG_MONGODB_SERVER=mongodb
+#     depends_on:
+#       - "mongodb"
+      
+# volumes:
+#   mongo_data:
+#     external: true
 version: '3'
 services:
   my-app:
@@ -11,8 +44,6 @@ services:
     image: mongo
     ports:
       - 27017:27017
-    volumes:
-      - mongo_data:/data/db
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=superuser
@@ -27,7 +58,3 @@ services:
       - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
       - "mongodb"
-      
-volumes:
-  mongo_data:
-    external: true
