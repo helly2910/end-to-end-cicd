@@ -20,18 +20,19 @@
     }
 </style>
 <script>
-    (async function init() {
-        const cont = document.getElementById('container');
-        const response = await fetch('http://100.25.212.182:3000/fetch-data', {
-            method: "GET",
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            }
-        });
-        const jsonResponse = await response.json();
-        document.getElementById('dynamic').textContent = jsonResponse.data;
-    })();
+(async function init() {
+    const cont = document.getElementById('container');
+    const response = await fetch('http://my-app:3000/fetch-data', {
+        method: "GET",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+    });
+    const jsonResponse = await response.json();
+    document.getElementById('dynamic').textContent = jsonResponse.data;
+})();
+
 </script>
 <body>
     <div class='container' id='container'>
