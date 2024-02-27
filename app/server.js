@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 let app = express();
 
 const DB_USER = "admin"
-const DB_PASS = "superuser"
+const DB_PASS = "pass"
 
 app.use(bodyParser.urlencoded({
   extended: true
