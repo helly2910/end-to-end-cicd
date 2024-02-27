@@ -5,8 +5,8 @@ let MongoClient = require('mongodb').MongoClient;
 let bodyParser = require('body-parser');
 let app = express();
 
-const DB_USER = process.env.MONGO_DB_USERNAME
-const DB_PASS = process.env.MONGO_DB_PWD
+const DB_USER = "admin"
+const DB_PASS = "superuser"
 
 app.use(bodyParser.urlencoded({
   extended: true
